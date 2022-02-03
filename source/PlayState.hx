@@ -3352,19 +3352,18 @@ judgementCounter.setFormat(Paths.font("vcr.ttf"), 20, FlxColor.WHITE, FlxTextAli
 			if(ClientPrefs.scoreZoom)
 			{
 				if(scoreTxtTween != null && judgementCounterTween != null) {
-					scoreTxtTween.cancel();
                                         JudgementCounterTween.cancel();
+					scoreTxtTween.cancel();
 				}
 				scoreTxt.scale.x = 1.075;
 				scoreTxt.scale.y = 1.075;
-                                judgementCounter.scale.x = 1.075;
-                                judgementCounter.scale.y = 1.075;
-
 				scoreTxtTween = FlxTween.tween(scoreTxt.scale, {x: 1, y: 1}, 0.2, {
 					onComplete: function(twn:FlxTween) {
 						scoreTxtTween = null;
 					}
 				});
+                                judgementCounter.scale.x = 1.075;
+                                judgementCounter.scale.y = 1.075;
                                 judgementCounterTween = FlxTween.tween(judgementCounter.scale, {x: 1, y: 1}, 0.2, {
                                 onComplete: function(twn:FlxTween) {
                                         judgementCounterTween = null;
