@@ -2232,11 +2232,11 @@ judgementCounter.setFormat(Paths.font("vcr.ttf"), 20, FlxColor.WHITE, FlxTextAli
 		super.update(elapsed);
 
 		if(ratingName == '?') {
-			scoreTxt.text = 'Score: ' + songScore + '  | Rating: ' + ratingName;
-                        judgementCounter.text = 'Sicks: 0 \nGoods: 0\nBads: 0\nShits: 0\nMisses: 0';
+			scoreTxt.text = 'Score: ' + songScore + '  | Health: 50 %| Rating: ' + ratingName;
+                        judgementCounter.text = 'Sicks: 0 \nGoods: 0\nBads: 0\nShits: 0\nMisses: 0n\';
 		} else {
-			scoreTxt.text = 'Score: ' + songScore + ' | Rating: ' + ratingName + ' (' + Highscore.floorDecimal(ratingPercent * 100, 2) + '%)' + ' - ' + ratingFC;//peeps wanted no integer rating
-                       judgementCounter.text = 'Sicks: ${sicks}\nGoods: ${goods}\nBads: ${bads}\nShits: ${shits}\nMisses: ${songMisses}';
+			scoreTxt.text = 'Score: ' + songScore + ' | Health: ' + Math.round(health * 50) +' %| Rating: ' + ratingName + ' (' + Highscore.floorDecimal(ratingPercent * 100, 2) + '%)' + ' - ' + ratingFC;//peeps wanted no integer rating
+                       judgementCounter.text = 'Sicks: ${sicks}\nGoods: ${goods}\nBads: ${bads}\nShits: ${shits}\nMisses: ${songMisses}\n';
 		}
 
 		if(botplayTxt.visible) {
