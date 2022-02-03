@@ -227,7 +227,7 @@ class PlayState extends MusicBeatState
 	public var scoreTxt:FlxText;
         public var judgementCounter:FlxText;
 	var timeTxt:FlxText;
-	var scoreTxtTween:FlxTween
+	var scoreTxtTween:FlxTween;
         var judgementCounterTween:FlxTween;
 
 	public static var campaignScore:Int = 0;
