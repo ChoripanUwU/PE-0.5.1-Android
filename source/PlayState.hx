@@ -1027,7 +1027,9 @@ judgementCounter.setFormat(Paths.font("vcr.ttf"), 20, FlxColor.WHITE, FlxTextAli
                 judgementCounter.borderSize = 2;
                 judgementCounter.borderQuality = 2;
                 judgementCounter.scrollFactor.set();
-                judgementCounter.screenCenter(Y);                                                                    if(!ClientPrefs.hideHud) {add(judgementCounter);}
+                judgementCounter.screenCenter(Y);
+                if(!ClientPrefs.hideHud) {add(judgementCounter);}
+
 
 		botplayTxt = new FlxText(400, timeBarBG.y + 55, FlxG.width - 800, "BOTPLAY", 32);
 		botplayTxt.setFormat(Paths.font("vcr.ttf"), 32, FlxColor.WHITE, CENTER, FlxTextBorderStyle.OUTLINE, FlxColor.BLACK);
@@ -1051,6 +1053,7 @@ judgementCounter.setFormat(Paths.font("vcr.ttf"), 20, FlxColor.WHITE, FlxTextAli
 		timeBar.cameras = [camHUD];
 		timeBarBG.cameras = [camHUD];
 		timeTxt.cameras = [camHUD];
+                judgementCounter.cameras = [camHUD];
 		doof.cameras = [camHUD];
 
                 #if android
@@ -3348,7 +3351,7 @@ judgementCounter.setFormat(Paths.font("vcr.ttf"), 20, FlxColor.WHITE, FlxTextAli
 
 			if(ClientPrefs.scoreZoom)
 			{
-				if(scoreTxtTween != null) {
+				if(scoreTxtTween != null && judgementCounterTween !null) {
 					scoreTxtTween.cancel();
                                         JudgementCounterTween.cancel();
 				}
