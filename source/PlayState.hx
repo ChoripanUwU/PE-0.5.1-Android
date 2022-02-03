@@ -3352,7 +3352,7 @@ judgementCounter.setFormat(Paths.font("vcr.ttf"), 20, FlxColor.WHITE, FlxTextAli
 			if(ClientPrefs.scoreZoom)
 			{
 				if(scoreTxtTween != null && judgementCounterTween != null) {
-                                        JudgementCounterTween.cancel();
+                                        judgementCounterTween.cancel();
 					scoreTxtTween.cancel();
 				}
 				scoreTxt.scale.x = 1.075;
